@@ -90,6 +90,7 @@ class _CategoryViewState extends State<CategoryView> {
                             horizontal: 8,
                           ),
                           child: ArticleView(
+                            article: article,
                             title: article.title,
                             desc: article.description,
                             url: article.url,

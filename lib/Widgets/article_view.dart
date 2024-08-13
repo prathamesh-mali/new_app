@@ -1,11 +1,14 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/Controller/bookmark_controller.dart';
 import 'package:news_app/screens/article_screen.dart';
 
 import '../utils/constants.dart';
 
+// ignore: must_be_immutable
 class ArticleView extends StatefulWidget {
+  dynamic article;
   String? title;
   String? desc;
   String? content;
@@ -14,6 +17,7 @@ class ArticleView extends StatefulWidget {
 
   ArticleView({
     super.key,
+    required this.article,
     required this.title,
     required this.desc,
     required this.url,
@@ -26,6 +30,8 @@ class ArticleView extends StatefulWidget {
 }
 
 class _ArticleViewState extends State<ArticleView> {
+  Bookmarkcontroller bookmark = Bookmarkcontroller();
+  bool _bookmarkAdded = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -41,7 +47,7 @@ class _ArticleViewState extends State<ArticleView> {
         elevation: 5,
         borderRadius: BorderRadius.circular(15),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             children: [
               ClipRRect(
@@ -52,14 +58,39 @@ class _ArticleViewState extends State<ArticleView> {
                 ),
               ),
               SizedBox(
-                width: size.width,
-                child: Text(
-                  widget.title!,
-                  style: textStyle().titleText,
-                ),
+                height: 10.sp,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                    width: size.width * 0.8,
+                    child: Text(
+                      widget.title!,
+                      style: textStyle().titleText,
+                    ),
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        _bookmarkAdded
+                            ? bookmark.removeBookmark(widget.article)
+                            : bookmark.addBookmark(widget.article);
+                        setState(() {
+                          _bookmarkAdded = !_bookmarkAdded;
+                          print("bookmarkAdded  from setstate");
+                          print(_bookmarkAdded);
+                        });
+                        print("bookmarkAdded  as whole");
+                        print(_bookmarkAdded);
+                      },
+                      child: _bookmarkAdded
+                          ? const Icon(Icons.bookmark_added_outlined)
+                          : const Icon(Icons.bookmark_outline))
+                ],
               ),
               SizedBox(
-                height: 2.h,
+                height: 5.h,
               ),
               SizedBox(
                 width: size.width,

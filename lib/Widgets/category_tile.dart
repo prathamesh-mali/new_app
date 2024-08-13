@@ -38,8 +38,8 @@ class CategoryTile extends StatelessWidget {
                 categoryName,
                 style: GoogleFonts.poppins(
                   color: Colors.white,
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
             ),

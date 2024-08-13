@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:news_app/models/article_model.dart';
@@ -10,7 +12,7 @@ class News {
   Future<void> getNews() async {
     try {
       String trendingNewsUrl =
-          "https://newsapi.org/v2/everything?q=tesla&from=2024-04-14&sortBy=publishedAt&lan=en&apiKey=$apiKey";
+          "https://newsapi.org/v2/everything?q=tesla&sortBy=publishedAt&lan=en&apiKey=$apiKey";
 
       var response = await dio.get(trendingNewsUrl);
 

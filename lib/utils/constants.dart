@@ -21,5 +21,5 @@ class textStyle {
 
 class AppColors {
   Color descColor = const Color(0xFF4E4E4E);
-  Color tileColor = const Color(0x531A1A1A);
+  Color tileColor = const Color(0xFF1A1A1A).withOpacity(0.6);
 }

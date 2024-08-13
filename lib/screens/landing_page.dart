@@ -54,26 +54,29 @@ class _LandingScreenState extends State<LandingScreen> {
               ),
             ),
             const Spacer(),
-            GestureDetector(
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const HomeScreen(),
-                  )),
-              child: Container(
-                alignment: Alignment.center,
-                width: size.width,
-                height: 50.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: Colors.blue,
-                ),
-                child: Text(
-                  "Get Started",
-                  style: GoogleFonts.poppins(
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: GestureDetector(
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const HomeScreen(),
+                    )),
+                child: Container(
+                  alignment: Alignment.center,
+                  width: size.width,
+                  height: 50.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.blue,
+                  ),
+                  child: Text(
+                    "Get Started",
+                    style: GoogleFonts.poppins(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

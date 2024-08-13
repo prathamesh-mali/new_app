@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/Widgets/blog_tile.dart';
 import 'package:news_app/Widgets/category_tile.dart';
 import 'package:news_app/models/article_model.dart';
+import 'package:news_app/screens/bookmark_page.dart';
 import 'package:news_app/services/data.dart';
 import 'package:news_app/models/category_Model.dart';
 import 'package:double_back_to_close_app/double_back_to_close_app.dart';
@@ -52,6 +53,22 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: Text('News', style: textStyle().appBarText),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BookmarkPage(),
+                ),
+              );
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(right: 15.0),
+              child: Icon(Icons.bookmark),
+            ),
+          )
+        ],
       ),
       body: DoubleBackToCloseApp(
         snackBar: const SnackBar(content: Text('Press back again to exit')),

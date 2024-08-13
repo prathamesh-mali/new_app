@@ -49,7 +49,7 @@ class _ArticlePageState extends State<ArticlePage> {
                   color: Colors.grey,
                   size: 20,
                 )
-              : Stack()
+              : const Stack()
         ],
       ),
     );
