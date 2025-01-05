@@ -30,7 +30,7 @@ class _ViewAllScreenState extends State<ViewAllScreen> {
             var article = widget.articles[index];
             return Container(
               margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
-              child: Blogtile(
+              child: BlogTile(
                 title: article.title,
                 desc: article.description,
                 url: article.url,

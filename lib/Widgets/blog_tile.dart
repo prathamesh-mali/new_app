@@ -6,13 +6,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/screens/article_screen.dart';
 import 'package:news_app/utils/constants.dart';
 
-class Blogtile extends StatefulWidget {
-  String? title;
-  String? desc;
-  String? url;
-  String? urltoImage;
+class BlogTile extends StatefulWidget {
+  final String? title;
+  final String? desc;
+  final String? url;
+  final String? urltoImage;
 
-  Blogtile({
+  const BlogTile({
     Key? key,
     required this.title,
     required this.desc,
@@ -21,10 +21,10 @@ class Blogtile extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<Blogtile> createState() => _BlogtileState();
+  State<BlogTile> createState() => _BlogTileState();
 }
 
-class _BlogtileState extends State<Blogtile> {
+class _BlogTileState extends State<BlogTile> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;

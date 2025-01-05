@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => BookmarkPage(),
+                  builder: (context) => const BookmarkPage(),
                 ),
               );
             },
@@ -161,7 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return Container(
                               margin: const EdgeInsets.symmetric(
                                   vertical: 5, horizontal: 8),
-                              child: Blogtile(
+                              child: BlogTile(
                                 title: article.title,
                                 desc: article.description,
                                 url: article.url,
